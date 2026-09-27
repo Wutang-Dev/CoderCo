@@ -102,8 +102,8 @@ Developing strong Linux administration skills will allow me to troubleshoot infr
 |---|---|
 | Linux environment setup | Completed |
 | File system navigation | Completed |
-| Permissions and ownership | To document |
-| Process management | To document |
+| Permissions and ownership | Completed |
+| Process management | Completed |
 | Text processing | To document |
 | Bandit Levels 1–20 | To document |
 
