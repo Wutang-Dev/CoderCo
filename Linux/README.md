@@ -100,8 +100,8 @@ Developing strong Linux administration skills will allow me to troubleshoot infr
 
 | Task | Status |
 |---|---|
-| Linux environment setup | To document |
-| File system navigation | To document |
+| Linux environment setup | Completed |
+| File system navigation | Completed |
 | Permissions and ownership | To document |
 | Process management | To document |
 | Text processing | To document |
