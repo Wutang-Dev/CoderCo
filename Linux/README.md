@@ -105,6 +105,6 @@ Developing strong Linux administration skills will allow me to troubleshoot infr
 | Permissions and ownership | Completed |
 | Process management | Completed |
 | Text processing | To document |
-| Bandit Levels 1–20 | To document |
+| Bandit Levels 1–20 | up to level 11 documented  |
 
 This README will be updated as I complete and document each exercise.
