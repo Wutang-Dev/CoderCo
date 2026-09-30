@@ -36,3 +36,7 @@ CoderCo/
 ├── CICD/
 ├── Kubernetes/
 └── Projects/
+
+## Troubleshooting
+
+[Technical Troubleshooting Knowledge Base](Troubleshooting/README.md)
