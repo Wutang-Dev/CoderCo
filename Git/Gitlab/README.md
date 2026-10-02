@@ -26,3 +26,8 @@ I use this directory as a safe environment where I can create files, branches, c
 Exercises and experiments will be added as I continue through the Git module of the CoderCo bootcamp.
 
 The goal is to understand not only which Git commands to use, but what each command is doing and why.
+
+
+## Feature Branch Practice
+
+This change was created on the `feature/note.md` branch to practise the Git feature branch and Pull Request workflow.
