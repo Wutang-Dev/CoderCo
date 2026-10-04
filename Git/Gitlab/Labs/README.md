@@ -53,6 +53,24 @@ Introduces the feature branch workflow and covers:
 
 ---
 
+## Lab 02 - Inspecting Changes with Git Diff
+
+[02-inspecting-changes-with-git-diff.md](02-inspecting-changes-with-git-diff.md)
+
+Focuses on inspecting changes at different stages of the Git workflow and covers:
+
+- Using `git diff` to inspect unstaged changes
+- Using `git diff --staged` to inspect staged changes
+- Using `git diff HEAD` to compare changes against the latest commit
+- Understanding the difference between the working directory, staging area and `HEAD`
+- Staging a file and then modifying it again
+- Understanding how staged and unstaged changes can exist in the same file
+- Using `git show` to inspect a commit
+- Using `git show --stat` to view a summary of a commit
+- Reviewing changes before committing them
+
+---
+
 ## Approach
 
 These labs are intentionally hands-on.
