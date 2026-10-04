@@ -98,7 +98,7 @@ http://nginx.rginfralabs.co.uk
 
 The NGINX welcome page loaded successfully, confirming that the DNS record, AWS networking and NGINX web server were working together correctly.
 
-![NGINX Custom Domain](screenshots/8-verifying-custom-domain.png)
+![NGINX Custom Domain](screenshots/9-verifying-custom-domain.png)
 
 
 ## What I Learnt
