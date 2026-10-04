@@ -15,3 +15,5 @@ This line was added to practise inspecting unstaged changes with `git diff`.
 This change will be staged first.
 
 This change was added after staging and is currently unstaged.
+
+This change is being used to practise comparing my working directory directly against `HEAD`.
