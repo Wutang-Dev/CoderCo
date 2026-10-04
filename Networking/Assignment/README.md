@@ -35,7 +35,10 @@ AWS Security Group
 Ubuntu EC2 Instance
    │
    ▼
-NGINX Web Server
+NGINX Web Server 
+
+```
+
 
 ## What I Built
 
