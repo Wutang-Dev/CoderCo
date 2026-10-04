@@ -11,3 +11,5 @@ Git diff allows me to see exactly what has changed inside my files rather than o
 This file will be modified several times during the lab so I can inspect the changes at different stages of the Git workflow.
 
 This line was added to practise inspecting unstaged changes with `git diff`.
+
+This change will be staged first.
