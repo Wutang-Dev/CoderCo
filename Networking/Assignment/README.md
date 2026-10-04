@@ -9,21 +9,33 @@ I built an NGINX web server hosted on an Ubuntu EC2 virtual machine in AWS. I th
 This project gave me practical experience with AWS EC2, Linux, NGINX, DNS, SSH, security groups, and basic web server networking.
 
 ## Architecture
-A simple representation of how traffic reaches the web server.
 
+A simple representation of how HTTP traffic reaches the NGINX web server.
+
+```text
 Internet
-    ↓
+   │
+   ▼
 nginx.rginfralabs.co.uk
-    ↓
+   │
+   │ DNS lookup
+   ▼
 GoDaddy DNS
-    ↓
+   │
+   │ A record
+   ▼
 AWS EC2 Public IPv4
-    ↓
-Security Group - TCP/80
-    ↓
+   │
+   │ HTTP (TCP/80)
+   ▼
+AWS Security Group
+   │
+   │ Allows inbound TCP/80
+   ▼
 Ubuntu EC2 Instance
-    ↓
-NGINX
+   │
+   ▼
+NGINX Web Server
 
 ## What I Built
 
