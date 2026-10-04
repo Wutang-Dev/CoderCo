@@ -9,3 +9,5 @@ Git diff allows me to see exactly what has changed inside my files rather than o
 ## Practice
 
 This file will be modified several times during the lab so I can inspect the changes at different stages of the Git workflow.
+
+This line was added to practise inspecting unstaged changes with `git diff`.
