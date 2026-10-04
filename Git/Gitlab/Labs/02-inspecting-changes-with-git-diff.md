@@ -13,3 +13,5 @@ This file will be modified several times during the lab so I can inspect the cha
 This line was added to practise inspecting unstaged changes with `git diff`.
 
 This change will be staged first.
+
+This change was added after staging and is currently unstaged.
