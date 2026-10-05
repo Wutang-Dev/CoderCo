@@ -9,3 +9,7 @@ This lab will build on my understanding of the working directory, staging area a
 ## Practice 
 
 I will intentonally make changes and mistakes so I can practice restoring files and removing from the staging area. 
+
+This change was accidentally added to the staging area.
+
+This change was accidentally added to the staging area.
