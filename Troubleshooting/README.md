@@ -12,6 +12,7 @@ The aim is to develop my troubleshooting skills, document technical solutions an
 |---|---|---|---|
 | 01 | [Ubuntu LVM Storage](01-ubuntu-lvm-storage.md) | Linux, Proxmox, LVM | Resolved |
 | 02 | [Git Pre-Commit YAML](02-git-precommit-yaml.md) | Git, YAML, ShellCheck | Resolved |
+| 03 | [Syslog Disk Full](03-syslog-disk-full.md) | Linux, Ubuntu, rsyslog | Resolved |
 
 ## Troubleshooting methodology
 
