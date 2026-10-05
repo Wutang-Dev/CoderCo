@@ -13,5 +13,3 @@ I will intentonally make changes and mistakes so I can practice restoring files 
 This change was accidentally added to the staging area.
 
 This change was accidentally added to the staging area.
-
-This change should not have been committed.
