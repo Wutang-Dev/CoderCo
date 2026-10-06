@@ -44,7 +44,7 @@ pip install Flask
 
 This produced an `externally-managed-environment` error.
 
-![Flask installation error](screenshots/1-install-flask-error.png)
+![Flask installation error](../screenshots/1-install-flask-error.png)
 
 The error indicated that the Ubuntu Python environment was externally managed and suggested installing the required package through APT.
 
@@ -90,7 +90,7 @@ And created the Python application file:
 touch app.py
 ```
 
-![Creating the application directory and files](screenshots/2-creating-dir-and-files.png)
+![Creating the application directory and files](../screenshots/2-creating-dir-and-files.png)
 
 ---
 
@@ -125,7 +125,7 @@ I configured Flask to listen on:
 
 Using `0.0.0.0` allows the application to listen on all available network interfaces rather than only the loopback interface.
 
-![Flask application code](screenshots/3-code-app.png)
+![Flask application code](../screenshots/3-code-app.png)
 
 ---
 
@@ -139,7 +139,7 @@ python3 app.py
 
 This allowed me to confirm that the application itself worked before introducing Docker.
 
-![Testing Flask locally](screenshots/4-testing-the-app-locally.png)
+![Testing Flask locally](../screenshots/4-testing-the-app-locally.png)
 
 This was useful because it separated application troubleshooting from Docker troubleshooting.
 
@@ -161,11 +161,11 @@ I confirmed that the file had been created using:
 ls
 ```
 
-![Creating the Dockerfile](screenshots/5-creating-dockerfile.png)
+![Creating the Dockerfile](../screenshots/5-creating-dockerfile.png)
 
 I then edited the Dockerfile using VS Code.
 
-![Creating the Dockerfile in VS Code](screenshots/6-creating-dockerfile-vs-code.png)
+![Creating the Dockerfile in VS Code](../screenshots/6-creating-dockerfile-vs-code.png)
 
 The Dockerfile defines the instructions Docker uses to build an image containing my Flask application.
 
@@ -185,15 +185,15 @@ Where:
 - `-t hello-flask` gives the image the tag `hello-flask`.
 - `.` tells Docker to use the current directory as the build context.
 
-![Docker build command](screenshots/7-docker-build-comand.png)
+![Docker build command](../screenshots/7-docker-build-comand.png)
 
 My initial build attempt produced an error.
 
-![Docker build error](screenshots/8-docker-build-comand-error.png)
+![Docker build error](../screenshots/8-docker-build-comand-error.png)
 
 I investigated the error and corrected the issue.
 
-![Docker build error correction](screenshots/9-docker-build-comand-permission-error.png)
+![Docker build error correction](../screenshots/9-docker-build-comand-permission-error.png)
 
 I then encountered another error because my user did not have permission to communicate with the Docker daemon.
 
@@ -207,7 +207,7 @@ sudo docker build -t hello-flask .
 
 The image then built successfully.
 
-![Successful Docker build](screenshots/10-docker-build-comand-fix.png)
+![Successful Docker build](../screenshots/10-docker-build-comand-fix.png)
 
 ---
 
@@ -219,7 +219,7 @@ With the image successfully built, I created and started a container:
 sudo docker run -d -p 5000:5000 hello-flask
 ```
 
-![Running the Flask container](screenshots/11-docker-run.png)
+![Running the Flask container](../screenshots/11-docker-run.png)
 
 The options used were:
 
@@ -260,7 +260,7 @@ The output showed my `hello-flask` image running with the following port mapping
 0.0.0.0:5000->5000/tcp
 ```
 
-![Verifying the container with docker ps](screenshots/12-verified-with-docker-ps.png)
+![Verifying the container with docker ps](../screenshots/12-verified-with-docker-ps.png)
 
 This confirmed that the container was running and that Docker had published port `5000`.
 
@@ -292,7 +292,7 @@ This also returned:
 Hello, world!
 ```
 
-![Testing the container locally](screenshots/13-testing-localy-on-vm.png)
+![Testing the container locally](../screenshots/13-testing-localy-on-vm.png)
 
 This confirmed that the Flask application was successfully running inside my Docker container and was accessible through the published host port.
 
