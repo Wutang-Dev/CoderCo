@@ -9,5 +9,6 @@ The exercises document the commands used, concepts practised, problems encounter
 | Exercise | Description | Status |
 |---|---|---|
 | [Hello Docker](hello-docker.md) | Docker installation, service verification and first container | Complete |
+| [Hello Flask](hello_flask/) | Built a Flask application, created my first Dockerfile, built a custom image and deployed it as a container | Complete |
 
 More exercises will be added as I progress through the module.
