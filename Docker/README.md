@@ -29,13 +29,11 @@ My hands-on labs and supporting documentation are stored in the [Exercises](Exer
 | Exercise | Description | Status |
 |---|---|---|
 | [Hello Docker](Exercises/hello-docker.md) | Installed Docker Engine, verified the service and ran my first container | Complete |
-| Container Management | Managing running and stopped containers | Planned |
-| First Dockerfile | Build a custom Docker image | Planned |
-| Flask Container | Containerise a Python Flask application | Planned |
+| [Hello Flask](Exercises/hello_flask/) | Created a Flask application, wrote my first Dockerfile, built a custom image and ran the application as a container | Complete |
 | Docker Networking | Create and manage custom Docker networks | Planned |
-| Flask + MySQL | Connect application and database containers | Planned |
-| Docker Compose | Manage a multi-container application | Planned |
-| Volumes | Implement persistent container storage | Planned |
+| Flask + MySQL | Connect Flask and MySQL containers using a custom Docker network | Planned |
+| Docker Compose | Define and manage a multi-container application with Docker Compose | Planned |
+| Volumes | Implement persistent storage using Docker volumes | Planned |
 
 ## Current Progress
 
