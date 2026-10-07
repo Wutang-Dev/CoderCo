@@ -44,9 +44,10 @@ My hands-on labs and supporting documentation are stored in the [Exercises](Exer
 - [x] Pulled the `hello-world` image
 - [x] Ran my first container
 - [x] Documented Docker daemon permission troubleshooting
-- [ ] Practise container management
-- [ ] Build my first custom image
-- [ ] Containerise a Flask application
+- [x] Documented Docker daemon permission troubleshooting
+- [x] Practise container management
+- [x] Build my first custom image
+- [x] Containerise a Flask application
 - [ ] Configure Docker networking
 - [ ] Deploy a multi-container application
 - [ ] Implement Docker Compose
