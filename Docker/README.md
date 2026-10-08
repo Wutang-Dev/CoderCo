@@ -32,8 +32,7 @@ My hands-on labs and supporting documentation are stored in the [Exercises](Exer
 | [Hello Flask](Exercises/hello-flask.md) | Created a Flask application, wrote my first Dockerfile, built a custom image and ran the application as a container | Complete |
 | [Docker Networking](Exercises/hello-flask.md) | Created a custom Docker network to enable communication between containers | Complete |
 | [Flask + MySQL](Exercises/hello-flask.md) | Extended my Flask application with MySQL, installed dependencies and built the updated Docker image | Complete |
-| Docker Compose | Define and manage a multi-container application with Docker Compose | Planned |
-| Volumes | Implement persistent storage using Docker volumes | Planned |
+| [Docker Compose](Exercises/hello-flask.md) | Created a Docker Compose YAML file to manage Flask and MySQL containers, configured networking and resolved a port conflict | Complete |
 
 ## Current Progress
 
