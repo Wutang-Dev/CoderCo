@@ -154,7 +154,7 @@ RUN pip install flask mysqlclient
 EXPOSE 5000
 ```
 
-![Amended Dockerfile](../Screenshots/21-ammeded-dockerfile.png)
+![Amended Dockerfile](../Screenshots/21-ammeded-dockerfile .png)
 
 This introduced duplicate installation instructions and attempted to install `mysqlclient` before installing its required system dependencies.
 
