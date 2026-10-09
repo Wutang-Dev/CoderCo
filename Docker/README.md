@@ -33,6 +33,7 @@ My hands-on labs and supporting documentation are stored in the [Exercises](Exer
 | [Docker Networking](Exercises/hello-flask.md) | Created a custom Docker network to enable communication between containers | Complete |
 | [Flask + MySQL](Exercises/hello-flask.md) | Extended my Flask application with MySQL, installed dependencies and built the updated Docker image | Complete |
 | [Docker Compose](Exercises/hello-flask.md) | Created a Docker Compose YAML file to manage Flask and MySQL containers, configured networking and resolved a port conflict | Complete |
+| [Docker Hub](dockerhub.md) | Built, tagged, pushed and pulled a Docker image using Docker Hub, including troubleshooting authentication and image-tagging errors | Complete |
 
 ## Current Progress
 
