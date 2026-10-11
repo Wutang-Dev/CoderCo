@@ -14,7 +14,7 @@ EXPOSE 5000
 
 CMD ["python", "app.py"]
 
-## Stage 1 build stage
+# Stage 1 build stage
 FROM python:3.8-slim as build
 WORKDIR /app
 RUN apt-get update && apt-get install -y \
@@ -25,3 +25,14 @@ RUN apt-get update && apt-get install -y \
 
 COPY  . .
 RUN pip install flask mysqlclient
+
+# Stage 2: Production stage
+FROM python:3.8-slim
+
+WORKDIR /app
+
+COPY --from=build /app /app
+
+EXPOSE 5000
+
+CMD ["python", "app.py"]
