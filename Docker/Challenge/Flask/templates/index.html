@@ -1,0 +1,16 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<div class="container">
+    <img src="{{ url_for('static', filename='images/rg-logo.png') }}"
+         alt="RG InfraLabs Logo"
+         class="logo">
+
+    <h1>Welcome to RG InfraLabs</h1>
+    <p>My Flask, Redis and Docker Compose project.</p>
+
+    <a href="/count" class="btn-primary">View Visitor Count</a>
+</div>
+
+{% endblock %}
