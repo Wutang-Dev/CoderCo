@@ -1,0 +1,38 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<div class="container">
+    <h1>About This Project</h1>
+
+    <p>
+        This project was developed as part of the
+        CoderCo Docker module to demonstrate
+        containerisation, networking and load balancing.
+    </p>
+
+    <h2>Technologies Used</h2>
+
+    <p>Python Flask | Redis | Docker | NGINX | Docker Compose</p>
+
+    <h2>Infrastructure</h2>
+
+    <p>
+        NGINX acts as a reverse proxy and load balancer,
+        distributing requests across three Flask containers.
+    </p>
+
+    <p>
+        Redis stores the visitor count using persistent
+        Docker volume storage.
+    </p>
+
+    <a href="https://github.com/Wutang-Dev/CoderCo/tree/main/Docker/Challenge"
+       class="btn-primary"
+       target="_blank"
+       rel="noopener noreferrer">
+        View Project on GitHub
+    </a>
+</div>
+
+{% endblock %}

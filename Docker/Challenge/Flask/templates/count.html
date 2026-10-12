@@ -1,0 +1,17 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<div class="container">
+    <h1>Visitor Dashboard</h1>
+
+    <h2>Total Visits</h2>
+    <h2>{{ count }}</h2>
+    <h3>Request handled by container:</h3>
+    <h2>{{ container_id }}</h2>
+    <p>Every visit counts. Keep building, keep learning.</p>
+
+    <a href="/" class="btn-primary">Back to Home</a>
+</div>
+
+{% endblock %}
