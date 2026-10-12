@@ -14,7 +14,7 @@ def greeting():
 
 def get_count():
     count = redis_client.incr('count')
-    return f'Count: {count}'
+    return f'You have visited the website: {count} times'
 
 
 if __name__ == '__main__':
