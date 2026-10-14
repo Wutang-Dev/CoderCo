@@ -58,4 +58,3 @@ It reinforced the importance of securing AWS identities before granting access t
 
 ---
 
-[Back to IAM Home](README.md) | [Back to AWS Home](../README.md)
