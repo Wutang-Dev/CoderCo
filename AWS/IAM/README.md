@@ -6,10 +6,9 @@
 
 | Exercise | Description | Status |
 |---|---|---|
-| [Creating an IAM User & Enabling MFA](IAM/MFA.md) | Created an IAM user and configured MFA | Complete |
-| [Creating IAM User Groups](IAM/User-Group.md) | Created an Admin group, added an IAM user and attached AdministratorAccess | Complete |
-| [Installing AWS CLI](Installing-AWS-CLI.md) | Installed AWS CLI on Ubuntu Linux and resolved a missing dependency | Complete |
-| [Configuring AWS CLI](Configuring-AWS-CLI.md) | Configured IAM authentication and verified connectivity using AWS STS | Complete |
+| [Creating an IAM User & Enabling MFA](MFA.md) | Created an IAM user and configured MFA | Complete |
+| [Creating IAM User Groups](User-Group.md) | Created an Admin group, added an IAM user and attached AdministratorAccess | Complete |
+| [Creating Custom IAM Policies](IAM-Policies.md) | Created a custom policy allowing EC2 and Lambda actions and attached it to the Admin group | Complete |
 
 ## What I Learnt
 
