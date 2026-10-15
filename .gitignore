@@ -1,0 +1,12 @@
+# AWS EC2 private keys
+*.pem
+*.key
+
+# AWS credentials
+.aws/
+credentials
+
+# Environment files
+.env
+.env.*
+!.env.example
