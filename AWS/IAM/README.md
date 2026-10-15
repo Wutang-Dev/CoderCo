@@ -4,7 +4,9 @@
 
 ## Practical Labs
 
-### [Creating an IAM User & Enabling MFA](MFA.md)
+|---|---|---|
+| [Creating an IAM User & Enabling MFA](MFA.md) | Created an IAM user and configured MFA | Complete |
+| [Creating IAM User Groups](User-Groups.md) | Created an Admin group, added an IAM user and attached AdministratorAccess | Complete |
 
 ## What I Learnt
 
