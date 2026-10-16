@@ -47,11 +47,9 @@ AWS provides services such as Elastic Load Balancing and Auto Scaling to help di
 
 | Exercise | Description | Status |
 |---|---|---|
-| EC2 Instance Deployment | Launch and configure an EC2 virtual machine | Planned |
-| EC2 User Data | Automate instance configuration during launch | Planned |
-| EC2 Instance Types | Explore different compute configurations | Planned |
-| EC2 Web Server | Deploy and access a web server hosted on EC2 | Planned |
-
+| [EC2 Instance Deployment](01EC2-Instance-SSH.md) | Launch an EC2 instance, configure SSH and connect remotely | Complete |
+| [EC2 Web Server](02appache-web-server.md) | Deploy an Apache web server using EC2 User Data | Complete |
+  
 ## Learning Objectives
 
 - Understand the different AWS compute services.
