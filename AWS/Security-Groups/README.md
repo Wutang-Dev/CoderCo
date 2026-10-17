@@ -24,6 +24,8 @@ The focus of this module is understanding how Security Groups protect EC2 instan
 | Exercise | Description | Status |
 |---|---|---|
 | [EC2 Security Group – Inbound Rules](01inboundrules.md) | Launched an Ubuntu EC2 instance and configured inbound rules for SSH (22) and HTTP (80) | Complete |
+| [Elastic IP Address](02elastic-ip.md) | Allocate and associate a static public IPv4 address with an EC2 instance | Complete |
+  
 
 ## Key Concepts
 
