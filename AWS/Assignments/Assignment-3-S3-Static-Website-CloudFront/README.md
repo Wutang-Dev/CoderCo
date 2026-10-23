@@ -530,10 +530,14 @@ The most useful commands were:
 
 This assignment gave me hands-on experience deploying a static website using multiple AWS services.
 
-I successfully configured an S3 website, delegated DNS management to Route 53, deployed CloudFront, issued an ACM certificate and verified HTTPS access through my custom domain.
+I successfully configured an S3 website, delegated DNS management to Route 53, deployed CloudFront as a Content Delivery Network (CDN), issued an SSL/TLS certificate through AWS Certificate Manager (ACM), and configured HTTPS access using my custom domain.
 
 The most valuable part of the assignment was troubleshooting DNS resolution and CloudFront connectivity.
 
-Rather than treating every failed website request as an AWS deployment issue, I learned to test each layer independently and use the results to narrow down the cause.
+Rather than treating every failed website request as an AWS deployment issue, I learned to test each layer independently using tools such as `dig`, `nslookup` and `curl` to identify where the problem occurred.
 
-**Final result:** The website was successfully served through CloudFront over HTTPS using `rginfralabs.co.uk` when tested with an explicit CloudFront IP. Normal access from my local resolver was still affected by stale GoDaddy DNS records at the time of documentation.
+Although the AWS infrastructure was functioning correctly, my local network continued resolving the domain to outdated GoDaddy parking IP addresses. By comparing responses from authoritative DNS servers, public resolvers and my local resolver, I was able to isolate the issue to stale DNS responses rather than the AWS configuration.
+
+**Final result:** The website is now successfully accessible at **https://rginfralabs.co.uk**, served through Amazon CloudFront over HTTPS with DNS managed by Route 53. Normal access has also been verified from my local network following the resolution of the stale DNS issue.
+
+This project reinforced the importance of understanding how cloud services work together and using a structured troubleshooting approach to diagnose infrastructure problems.
