@@ -1,0 +1,46 @@
+
+# Terraform working directory
+**/.terraform/*
+
+# Terraform state files (may contain secrets)
+*.tfstate
+*.tfstate.*
+*.tfstate.backup
+
+# Terraform variable files (may contain secrets)
+*.tfvars
+*.tfvars.json
+*.auto.tfvars
+*.auto.tfvars.json
+
+# Terraform plan files
+*.tfplan
+tfplan
+tfplan.*
+
+# Crash logs
+crash.log
+crash.*.log
+
+# Terraform override files
+override.tf
+override.tf.json
+*_override.tf
+*_override.tf.json
+
+# AWS credentials and keys
+.aws/
+credentials
+*.pem
+*.key
+
+# Environment files
+.env
+.env.*
+!.env.example
+
+# Local IDE / OS files
+.vscode/
+.DS_Store
+
+# Keep .terraform.lock.hcl tracked
