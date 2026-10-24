@@ -7,5 +7,9 @@ resource "aws_default_subnet" "default_az1" {
 }
 resource "aws_instance" "import" {
   ami                     = "ami-021aaf3749be66813"
-  instance_type           = "t3.micro"  
+  instance_type           = "t3.micro" 
+  tags = {
+      
+      Name        = "terraform-import"
+    } 
 }
