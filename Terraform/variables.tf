@@ -1,4 +1,6 @@
 variable "instance_type" {
-  type        = string
-  default     = "t3.micro"
+  type = string
+}
+locals{
+  instance_ami = "ami-021aaf3749be66813"
 }
