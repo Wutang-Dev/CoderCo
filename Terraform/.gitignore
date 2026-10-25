@@ -44,3 +44,12 @@ credentials
 .DS_Store
 
 # Keep .terraform.lock.hcl tracked
+
+# LocalStack persistent data
+setup/data/
+
+# LocalStack temporary files
+setup/volume/
+
+# LocalStack logs
+setup/*.log
