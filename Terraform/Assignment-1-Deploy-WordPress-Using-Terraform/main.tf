@@ -8,5 +8,11 @@ terraform {
 }
 #AWS Provider
 provider "aws" {
-  region = "us-east-1"
-}   
+  region = "eu-north-1"
+}
+
+#SSH Key Pair
+resource "aws_key_pair" "wordpress" {  
+  key_name   = "wordpress"
+  public_key = file("/home/ravi/PEM/wordpress.pem.pub")
+}
