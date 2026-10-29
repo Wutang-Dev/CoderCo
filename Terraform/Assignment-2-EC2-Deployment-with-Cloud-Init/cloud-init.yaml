@@ -1,0 +1,105 @@
+#cloud-config
+
+package_update: true
+
+packages:
+  - nginx
+
+write_files:
+  - path: /var/www/html/index.html
+    owner: root:root
+    permissions: '0644'
+    content: |
+      <!DOCTYPE html>
+      <html lang="en">
+      <head>
+          <meta charset="UTF-8">
+          <meta name="viewport" content="width=device-width, initial-scale=1.0">
+          <title>Assignment 2 | EC2 Cloud-Init</title>
+          <style>
+              * {
+                  box-sizing: border-box;
+              }
+
+              body {
+                  margin: 0;
+                  min-height: 100vh;
+                  background: #121212;
+                  color: #ffffff;
+                  font-family: Arial, sans-serif;
+                  display: flex;
+                  justify-content: center;
+                  align-items: center;
+                  text-align: center;
+                  padding: 24px;
+              }
+
+              .container {
+                  background: #181818;
+                  padding: 55px 45px;
+                  border: 1px solid #303030;
+                  border-radius: 16px;
+                  max-width: 750px;
+                  width: 100%;
+              }
+
+              h1 {
+                  color: #1DB954;
+                  font-size: 42px;
+                  margin-bottom: 20px;
+              }
+
+              h2 {
+                  font-size: 24px;
+                  margin-bottom: 20px;
+              }
+
+              p {
+                  color: #b3b3b3;
+                  font-size: 18px;
+                  line-height: 1.6;
+              }
+
+              .badge {
+                  display: inline-block;
+                  background: #1DB954;
+                  color: #121212;
+                  padding: 12px 24px;
+                  border-radius: 30px;
+                  font-weight: bold;
+                  margin-top: 25px;
+              }
+
+              .footer {
+                  margin-top: 35px;
+                  font-size: 14px;
+                  color: #777777;
+              }
+          </style>
+      </head>
+      <body>
+          <div class="container">
+              <h1>RG Infrastructure Labs</h1>
+              <h2>Assignment 2 - EC2 Deployment with Cloud-Init</h2>
+
+              <p>
+                  AWS EC2 infrastructure provisioned using Terraform.
+              </p>
+
+              <p>
+                  NGINX installed and configured automatically
+                  using Cloud-Init.
+              </p>
+
+              <div class="badge">NGINX DEPLOYED</div>
+
+              <div class="footer">
+                  Terraform | AWS EC2 | Cloud-Init | NGINX
+              </div>
+          </div>
+      </body>
+      </html>
+
+runcmd:
+  - systemctl enable nginx
+  - systemctl start nginx
