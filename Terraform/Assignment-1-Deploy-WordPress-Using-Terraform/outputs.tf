@@ -1,9 +1,13 @@
-# output block for ec2 instance public IP resource "aws_instance" "wordpress"
-output "wordpress_instance_public_ip" {
-  value = aws_instance.wordpress.public_ip
-}
-
 #combine http and public ip to create a url for wordpress
 output "wordpress_url" {
-  value = "http://${aws_instance.wordpress.public_ip}"
+  value = "http://${module.ec2_instance.public_ip}"
+}
+
+#output block for public ip
+output "public_ip" {
+  value = module.ec2_instance.public_ip
+}
+#output block for private ip
+output "private_ip" {
+  value = module.ec2_instance.private_ip
 }
