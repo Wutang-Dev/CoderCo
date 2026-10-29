@@ -1,0 +1,31 @@
+#AWS Security Group allowing ssh on ip address 86.160.249.231 and allowing http everywhere
+resource "aws_security_group" "wordpress" {
+  name        = var.security_group_name
+  description = var.security_group_description
+  vpc_id      = var.vpc_id
+
+  ingress {
+    description = "SSH access from specific IP"
+    from_port   = 22
+    to_port     = 22
+    protocol    = "tcp"
+    cidr_blocks = ["86.160.249.231/32"]
+  }
+  ingress {
+    description = "HTTP access from all IPs"
+    from_port   = 80
+    to_port     = 80
+    protocol    = "tcp"
+    cidr_blocks = ["0.0.0.0/0"]
+  }
+  egress {
+    description = "Allow all outbound traffic"
+    from_port   = 0
+    to_port     = 0
+    protocol    = "-1"
+    cidr_blocks = ["0.0.0.0/0"]
+  }
+  tags = {
+    Name = var.security_group_name
+  }
+}

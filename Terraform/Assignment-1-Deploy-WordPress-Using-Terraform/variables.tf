@@ -32,6 +32,12 @@ variable "key_pair_name" {
   type        = string
   default     = "wordpress"
 }
+#variable for public key path
+variable "public_key_path" {
+  description = "Path to the public key file"
+  type        = string
+  default     = "/home/ravi/PEM/wordpress.pem.pub"
+}
 #variable for subnet id
 variable "subnet_id" {
   description = "Subnet ID for the instance"
@@ -45,24 +51,18 @@ variable "security_group_name" {
   type        = string
   default     = "wordpress"
 }
-#variable for security group name 
-variable "security_group_http_name" {
-  description = "Name of the security group for HTTP"
-  type        = string
-  default     = "wordpress_http"
-}
+
 
 # variable for wordpress security group decscription
 variable "security_group_description" {
   description = "Description for the security group"
   type        = string
-  default     = "Allow SSH inbound traffic"
+  default     = "Allow SSH inbound traffic from specific IP and HTTP inbound traffic from all IPs"
 }
 
-# variable for wordpress security group decscription
-variable "security_group_http_description" {
-  description = "Description for the security group"
+#variable vpc id"
+variable "vpc_id" {
+  description = "The VPC ID where the security group will be created"
   type        = string
-  default     = "Allow HTTP inbound traffic"
+  default     = "vpc-09a5d1977b0448583"
 }
-

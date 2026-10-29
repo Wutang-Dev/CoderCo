@@ -1,4 +1,3 @@
-
 # Deploying WordPress on AWS Using Terraform
 
 ## Project Overview
@@ -15,51 +14,51 @@ The project also provided an opportunity to practise Terraform fundamentals, AWS
 
 The deployment consists of:
 
-- **Terraform:** Provisions and manages AWS infrastructure
+- ****Terraform:**** Provisions and manages AWS infrastructure
 
-- **AWS EC2:** Hosts the WordPress application on Ubuntu Server
+- ****AWS EC2:**** Hosts the WordPress application on Ubuntu Server
 
-- **AWS Security Groups:** Control SSH, HTTP and outbound traffic
+- ****AWS Security Groups:**** Control SSH, HTTP and outbound traffic
 
-- **Apache:** Serves the WordPress website
+- ****Apache:**** Serves the WordPress website
 
-- **PHP:** Runs the WordPress application
+- ****PHP:**** Runs the WordPress application
 
-- **MySQL:** Stores WordPress application data locally on EC2
+- ****MySQL:**** Stores WordPress application data locally on EC2
 
-- **Bash and cloud-init:** Automate installation and configuration
+- ****Bash and cloud-init:**** Automate installation and configuration
 
-**Traffic flow:**
+****Traffic flow:****
 
 ```text
 
 Internet
 
-    |
+    |
 
-    | HTTP (Port 80)
+    | HTTP (Port 80)
 
-    v
+    v
 
 AWS Security Group
 
-    |
+    |
 
-    v
+    v
 
 EC2 Instance (Ubuntu)
 
-    |
+    |
 
-    +-- Apache Web Server
+    +-- Apache Web Server
 
-    |       |
+    |       |
 
-    |       +-- PHP / WordPress
+    |       +-- PHP / WordPress
 
-    |
+    |
 
-    +-- MySQL Database (localhost)
+    +-- MySQL Database (localhost)
 
 ```
 
@@ -179,7 +178,7 @@ The key pair was created successfully.
 
 ![Successful Key Pair Deployment](Images/key-pair-apply.png)
 
-**Lesson learned:** Terraform state determines which resources Terraform manages. An existing AWS resource is not automatically recognised as part of the Terraform configuration. In other situations, importing the existing resource into Terraform state may be more appropriate than deleting it.
+****Lesson learned:**** Terraform state determines which resources Terraform manages. An existing AWS resource is not automatically recognised as part of the Terraform configuration. In other situations, importing the existing resource into Terraform state may be more appropriate than deleting it.
 
 ## 3. Configuring AWS Security Groups
 
@@ -211,7 +210,7 @@ I then applied the changes.
 
 ![Security Group Apply](Images/terraform-apply-sg.png)
 
-**Lesson learned:** Security groups operate as virtual firewalls for AWS resources. Only the required inbound ports should be exposed. MySQL remained accessible locally rather than being exposed publicly on port 3306.
+****Lesson learned:**** Security groups operate as virtual firewalls for AWS resources. Only the required inbound ports should be exposed. MySQL remained accessible locally rather than being exposed publicly on port 3306.
 
 ## 4. Provisioning the EC2 Instance
 
@@ -303,31 +302,31 @@ export DEBIAN_FRONTEND=noninteractive
 
 apt-get update -y
 
-apt-get install -y \
+apt-get install -y \\
 
-  apache2 \
+  apache2 \\
 
-  mysql-server \
+  mysql-server \\
 
-  php \
+  php \\
 
-  libapache2-mod-php \
+  libapache2-mod-php \\
 
-  php-mysql \
+  php-mysql \\
 
-  php-curl \
+  php-curl \\
 
-  php-gd \
+  php-gd \\
 
-  php-mbstring \
+  php-mbstring \\
 
-  php-xml \
+  php-xml \\
 
-  php-zip \
+  php-zip \\
 
-  wget \
+  wget \\
 
-  tar
+  tar
 
 # 2. Start Apache and MySQL
 
@@ -383,9 +382,9 @@ sed -i "s/password_here/${DB_PASSWORD}/" wp-config.php
 
 chown -R www-data:www-data /var/www/html
 
-find /var/www/html -type d -exec chmod 755 {} \;
+find /var/www/html -type d -exec chmod 755 {} \\;
 
-find /var/www/html -type f -exec chmod 644 {} \;
+find /var/www/html -type f -exec chmod 644 {} \\;
 
 # 10. Restart Apache
 
@@ -395,35 +394,22 @@ systemctl restart apache2
 
 ### How the Script Works
 
-| Section | Purpose |
+| Step | What the script does |
+| --- | --- |
+| 1 | Updates the Ubuntu package lists and installs Apache, MySQL, PHP and the required extensions. |
+| 2 | Enables and starts the Apache and MySQL services. |
+| 3 | Generates a random password for the WordPress database user. |
+| 4 | Creates the `wordpress_db` database and a dedicated `wp_user` account. |
+| 5 | Downloads and extracts the latest WordPress release. |
+| 6 | Removes Apache's default `index.html` page. |
+| 7 | Copies the WordPress files into `/var/www/html/`. |
+| 8 | Creates `wp-config.php` and sets the database connection values. |
+| 9 | Sets ownership to `www-data` and applies directory and file permissions. |
+| 10 | Restarts Apache so the site can be served. |
 
-|---|---|
+The script uses `set -e` to stop execution when a command fails, subject to Bash's usual exceptions. It generates the database password during deployment instead of hardcoding it into the script.
 
-| 1 | Updates package lists and installs Apache, MySQL, PHP and required extensions |
-
-| 2 | Enables and starts Apache and MySQL |
-
-| 3 | Generates a random database password |
-
-| 4 | Creates a dedicated WordPress database and user |
-
-| 5 | Downloads and extracts WordPress |
-
-| 6 | Removes the default Apache homepage |
-
-| 7 | Copies WordPress into the Apache document root |
-
-| 8 | Configures the WordPress database connection |
-
-| 9 | Sets ownership and filesystem permissions |
-
-| 10 | Restarts Apache |
-
-The `set -e` command instructs Bash to exit when a command fails, subject to Bash's normal exception rules.
-
-The database password is generated during deployment rather than being stored directly in the script.
-
-For this lab, MySQL runs on the same EC2 instance as WordPress, and the database user is granted permissions only on the WordPress database.
+For this learning project, MySQL runs locally on the same EC2 instance as WordPress, and the database user is granted permissions only on the WordPress database.
 
 ## 6. Connecting the Bash Script to Terraform
 
@@ -589,7 +575,7 @@ The directory contained `index.php`, `wp-admin`, `wp-content`, `wp-includes` and
 
 ![WordPress Files Verified](Images/verify-wordpress.png)
 
-**Lesson learned:** When Terraform succeeds but the application fails, troubleshooting needs to continue inside the EC2 instance. Cloud-init logs, service status and file inspection are essential tools for identifying application provisioning failures.
+****Lesson learned:**** When Terraform succeeds but the application fails, troubleshooting needs to continue inside the EC2 instance. Cloud-init logs, service status and file inspection are essential tools for identifying application provisioning failures.
 
 ## 8. Final Result
 
@@ -664,16 +650,23 @@ I also parameterised the EC2 subnet ID, allowing the subnet to be supplied throu
 After making the changes, I followed my usual Terraform workflow:
 
 terraform fmt
+
 terraform validate
+
 terraform plan
+
 terraform apply
+
 The plan showed four resources to add, with no existing resources to change or destroy. Terraform then successfully provisioned the four resources and displayed both outputs:
 
 Apply complete! Resources: 4 added, 0 changed, 0 destroyed.
 
 Outputs:
+
 wordpress_instance_public_ip = "16.16.255.186"
-wordpress_url                = "http://16.16.255.186"
+
+wordpress_url                = "http://16.16.255.186"
+
 Terraform Apply After Refactoring
 
 The outputs are derived from the EC2 resource, so I do not need to manually copy the public IP address into the URL configuration. They can also be retrieved later with terraform output.
@@ -689,13 +682,103 @@ This confirmed that the refactored Terraform configuration could recreate the in
 ### 9.5 Lessons Learned from Refactoring
 
 Terraform input variables allow configuration values to be changed without editing the resource definitions directly.
-Terraform outputs expose useful values, such as the instance public IP and application URL, after deployment.
-Resource references avoid hardcoding values that AWS assigns during provisioning.
-Running terraform fmt, terraform validate, terraform plan and terraform apply helps verify the refactored configuration.
-Testing the application in the browser is still necessary after Terraform reports a successful deployment.
-The next stage is to explore Terraform modules so that parts of the infrastructure configuration can be organised into reusable components.
 
-## 10. Cleanup and Cost Management
+Terraform outputs expose useful values, such as the instance public IP and application URL, after deployment.
+
+Resource references avoid hardcoding values that AWS assigns during provisioning.
+
+Running terraform fmt, terraform validate, terraform plan and terraform apply helps verify the refactored configuration.
+
+Testing the application in the browser is still necessary after Terraform reports a successful deployment.
+
+The next stage was to move the resources into reusable Terraform modules, documented in Version 3 below.
+
+## 10. Refactoring into Terraform Modules — Version 3
+
+After validating Version 2, I refactored the Terraform configuration again, this time moving the AWS resources into separate child modules. My goal was to make the configuration easier to understand, maintain and reuse while preserving the working WordPress deployment.
+
+### 10.1 Module Structure
+
+```text
+.
+├── main.tf
+├── provider.tf
+├── variables.tf
+├── outputs.tf
+└── modules/
+    ├── EC2/
+    │   ├── main.tf
+    │   ├── variables.tf
+    │   ├── outputs.tf
+    │   └── install-wordpress.sh
+    ├── security-group/
+    │   ├── main.tf
+    │   ├── variables.tf
+    │   └── outputs.tf
+    └── key-pair/
+        ├── main.tf
+        ├── variables.tf
+        └── outputs.tf
+```
+
+The root `main.tf` calls three modules:
+
+- **Key pair:** Creates the EC2 SSH key pair and exposes its name as an output.
+- **Security group:** Creates one security group with SSH restricted to my public IP, HTTP open on port 80, and outbound traffic allowed.
+- **EC2:** Provisions the Ubuntu instance, accepts the key pair name and security group ID from the other modules, and runs `install-wordpress.sh` through user data.
+
+The AWS provider remains configured in the root `provider.tf`. I moved the installation script into the EC2 module and used `file("${path.module}/install-wordpress.sh")` so Terraform reads the script relative to that module's directory.
+
+### 10.2 Connecting Modules Through Outputs
+
+The EC2 module receives values produced by the other modules, rather than referring directly to resources inside them:
+
+```hcl
+module "ec2_instance" {
+  source            = "./modules/EC2"
+  ami_id            = var.ami_id
+  instance_type     = var.instance_type
+  key_pair_name     = module.key_pair.wordpress_key_pair_name
+  security_group_id = module.security_group.security_group_id
+  subnet_id         = var.subnet_id
+  tag_name          = var.tag_name
+}
+```
+
+Inside `modules/EC2/outputs.tf`, I reference the resource directly using `aws_instance.wordpress.public_ip`. In the root `outputs.tf`, I use `module.ec2_instance.public_ip` to access the value exposed by the child module. This distinction was an important part of understanding Terraform module scope.
+
+### 10.3 Troubleshooting Module References
+
+During the refactor, Terraform attempted to download a nonexistent `hashicorp/ec2` provider because I had mistakenly declared `resource "ec2_instance" "wordpress"` instead of `resource "aws_instance" "wordpress"`. Running `terraform providers` helped isolate the issue to the EC2 module.
+
+I also encountered undeclared-module errors after using `module.ec2_instance` and `module.aws_instance` inside the EC2 module's own output blocks. I corrected those outputs to reference `aws_instance.wordpress` directly, while keeping `module.ec2_instance` references in the root configuration.
+
+### 10.4 Validating and Testing Version 3
+
+After correcting the module references, I ran:
+
+```bash
+terraform fmt -recursive
+terraform init
+terraform validate
+terraform plan
+```
+
+Terraform validated successfully, and the plan showed:
+
+```text
+Plan: 3 to add, 0 to change, 0 to destroy.
+```
+
+The three resources were an EC2 instance, an SSH key pair and a security group. After deployment, I connected to the instance and verified that cloud-init completed without errors, Apache was running, and the WordPress files were present in `/var/www/html/`.
+
+A local HTTP request returned `302 Found`, redirecting to the WordPress installation wizard. Finally, I opened the EC2 public IP address in my browser and confirmed that the WordPress language-selection screen loaded successfully.
+
+![WordPress Successfully Deployed After Refactoring into Modules — Version 3](Images/after-refactor-v3.png)
+
+**Lesson learned:** Terraform modules provide clear boundaries between resources. Child modules expose values through outputs, and the root module connects those outputs to other modules' inputs. Successful validation and planning still need to be followed by application-level testing.
+
+## 11. Cleanup and Cost Management
 
 Because this was a temporary learning environment, the infrastructure should be destroyed after testing and capturing evidence.
 
@@ -709,43 +792,25 @@ After destruction, I should verify in AWS that the EC2 instance and other Terraf
 
 Any separately created or retained resources, including Elastic IPs and EBS volumes, should also be checked to avoid unnecessary charges.
 
-## 11. Key Learnings
+## 12. Key Learnings
 
 This assignment strengthened my understanding of several important DevOps concepts.
 
-**Infrastructure as Code:** I used Terraform to define and provision AWS resources rather than relying on manual console configuration.
+****Infrastructure as Code:**** I used Terraform to define and provision AWS resources rather than relying on manual console configuration.
 
-**Terraform workflow:** I practised `terraform fmt`, `terraform init`, `terraform validate`, `terraform plan` and `terraform apply`.
+****Terraform workflow:**** I practised `terraform fmt`, `terraform init`, `terraform validate`, `terraform plan` and `terraform apply`.
 
-**AWS networking:** I configured security groups, public IP addressing and network connectivity for an EC2 instance.
+****AWS networking:**** I configured security groups, public IP addressing and network connectivity for an EC2 instance.
 
-**Linux automation:** I used Bash to install and configure Apache, PHP, MySQL and WordPress.
+****Linux automation:**** I used Bash to install and configure Apache, PHP, MySQL and WordPress.
 
-**Cloud-init:** I learned how EC2 user data executes scripts during initialisation and how to investigate failures.
+****Cloud-init:**** I learned how EC2 user data executes scripts during initialisation and how to investigate failures.
 
-**Troubleshooting:** I resolved a duplicate AWS key pair, a Terraform argument typo and a Bash script formatting issue.
+****Troubleshooting:**** I resolved a duplicate AWS key pair, a Terraform argument typo and a Bash script formatting issue.
 
-**Infrastructure versus application state:** Terraform can report a successful deployment even when the application installation fails, so both infrastructure and application validation are necessary.
+****Infrastructure versus application state:**** Terraform can report a successful deployment even when the application installation fails, so both infrastructure and application validation are necessary.
 
-## 12. Future Improvements
 
-This deployment was intentionally kept simple for learning purposes.
-
-Potential improvements include:
-
-- Using HTTPS with a domain name and TLS certificate
-
-- Moving MySQL to Amazon RDS
-
-- Managing application secrets with AWS Secrets Manager or Systems Manager Parameter Store
-
-- Tightening WordPress configuration file permissions
-
-- Adding monitoring and automated backups
-
-- Improving repeatability by pinning software versions and making the bootstrap script idempotent
-
-- Using a load balancer and multiple instances for higher availability
 
 ## Conclusion
 
@@ -755,7 +820,6 @@ The most valuable part of the assignment was troubleshooting the application dep
 
 By investigating cloud-init status, checking system services and inspecting the script at byte level, I identified and corrected the issue.
 
-The final deployment successfully loaded the WordPress installation wizard through the EC2 public IP address. I then refactored the configuration to use input variables and outputs and verified that the Version 2 deployment still served the WordPress installer.
+The final deployment successfully loaded the WordPress installation wizard through the EC2 public IP address. I refactored the configuration first to use input variables and outputs in Version 2, then into separate EC2, security group and key pair modules in Version 3. I validated the modular configuration, deployed it and confirmed that the WordPress installation wizard remained accessible.
 
-This project reinforced the importance of validating not only the infrastructure Terraform creates, but also the applications and services running on that infrastructure.
-
+This project reinforced the importance of validating not only the infrastructure Terraform creates, but also the applications and services running on that infrastructure. It also strengthened my understanding of Terraform module boundaries, resource references and passing values between modules.
