@@ -1,0 +1,19 @@
+# key value pairs 
+
+name: Ravi
+age: 33
+job: Devops Engineer
+
+# Lists
+
+fruits:
+- apple
+- banana
+- cherry
+
+# nested elements 
+
+address:
+  street: 123 address
+  city: London
+  Country: United Kingdom
