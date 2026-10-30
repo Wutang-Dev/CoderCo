@@ -22,7 +22,7 @@ jobs:
 
       - name: Install dependencies
         run: |
-          cd Chapter4-Using-Conditions-And-Parrallel-Builds
+          cd CI-CD/Labs/Chapter4-Using-Conditions-And-Parrallel-Builds
           python -m pip install --upgrade pip
           if [ -f requirements.txt ]; then
             pip install -r requirements.txt
@@ -30,7 +30,7 @@ jobs:
 
       - name: Run tests
         run: |
-          cd Chapter4-Using-Conditions-And-Parrallel-Builds
+          cd CI-CD/Labs/Chapter4-Using-Conditions-And-Parrallel-Builds
           python -m unittest discover
 
       - name: Notify us of success
