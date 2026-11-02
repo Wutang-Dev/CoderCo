@@ -27,7 +27,7 @@ jobs:
           if [ -f requirements.txt ]; then
             pip install -r requirements.txt
           fi
-
+      
       - name: Run tests
         run: |
           cd CI-CD/Labs/Chapter4-Using-Conditions-And-Parrallel-Builds
