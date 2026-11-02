@@ -1,0 +1,20 @@
+name: Test Custom JavaScript Action
+
+on: [push]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Run custom greeting action
+        id: greet
+        uses: Wutang-Dev/coderco-custom@feature/coderco-custom
+        with:
+          who-to-greet: 'CoderCo'
+      
+      - name: Display greeting time
+        run: echo "Greeting time: ${{ steps.greet.outputs.time }}"

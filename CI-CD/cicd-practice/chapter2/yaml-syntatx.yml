@@ -1,0 +1,19 @@
+# key value pairs 
+
+name: Ravi
+age: 33
+job: Cloud Engineer 
+
+#Lists 
+
+fruits:
+- apple
+- banana
+- cherry 
+
+#nested elements 
+
+address:
+  street: 123 street 
+  city: London 
+  country: England 
