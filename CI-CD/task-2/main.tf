@@ -2,7 +2,7 @@
 resource "aws_instance" "wordpress" {
 
   ami           = var.ami_id
-  instance_type=var.instance_type
+  instance_type = var.instance_type
   key_name      = var.key_pair_name
 
   vpc_security_group_ids = [
