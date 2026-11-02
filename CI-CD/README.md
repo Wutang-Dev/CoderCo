@@ -79,6 +79,3 @@ CI/CD connects technologies such as **GitHub, Docker, Terraform, AWS and Kuberne
 
 Throughout this module, I aim to understand how these technologies work together to build reliable deployment pipelines.
 
-## Learning Resources
-
-[CoderCo – What is CI/CD?](https://www.skool.com/coderco/classroom/290dac80?md=7d6163ebdbdf4be58ec0adcd786e9d6)
