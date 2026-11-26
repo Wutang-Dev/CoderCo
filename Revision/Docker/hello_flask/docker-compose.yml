@@ -1,0 +1,12 @@
+version: '3.15'
+services:
+  web:
+    image: 345471468677.dkr.ecr.eu-north-1.amazonaws.com/hello-flask:latest
+    ports:
+      - "5000:5000"
+    depends_on:
+      - mydb
+  mydb:
+    image: mysql:8.0
+    environment:
+      MYSQL_ROOT_PASSWORD: password
