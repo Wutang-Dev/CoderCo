@@ -1,7 +1,7 @@
 version: '3.15'
 services:
   web:
-    image: 345471468677.dkr.ecr.eu-north-1.amazonaws.com/hello-flask:latest
+    image: hello-flask:multistage
     ports:
       - "5000:5000"
     depends_on:
